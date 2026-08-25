@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "label": "About",
+    "path": "/about"
+  },
+  {
+    "label": "Product Profile",
+    "path": "/product-profile"
+  },
+  {
+    "label": "Gallery",
+    "path": "/gallery"
+  },
+  {
+    "label": "Clients",
+    "path": "/clients"
+  }
+]

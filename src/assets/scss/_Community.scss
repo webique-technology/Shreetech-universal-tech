@@ -1,0 +1,137 @@
+.community-wrap {
+  padding: 53px 0 77px 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #fff9ee;
+  // background-image: url('../images/testimonial-background.svg');
+  background-position: bottom;
+  background-repeat: repeat-x;
+
+  .testimonial-card {
+    background: #fff;
+    transition: .5s all ease-in;
+    padding: 40px 36px;
+    // box-shadow: 0 12px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 20px 10px;
+    border-radius: 30px;
+    text-align: left;
+
+    &:hover {
+      .test-img img {
+        background: $primary;
+      }
+    }
+
+    h4.testimonial-name {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 700;
+      line-height: 35px;
+
+      span {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    p.testimonial-text-small {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 400;
+
+    }
+
+    .test-img {
+      display: flex;
+      align-items: center;
+
+      img {
+        padding: 8px;
+        border-radius: 50%;
+        width: 90px;
+      }
+    }
+
+    .hor-line {
+      width: 100%;
+      height: 2px;
+      background: #B8B8B8;
+    }
+
+    .text-images-wrap {
+      transition: .5s all ease-in;
+      position: relative;
+      // border-bottom: solid 1px #B8B8B8;
+    }
+
+    &:hover img {
+      border-color: $primary;
+      transition: .5s all ease-in;
+    }
+  }
+
+  .custom-arrow {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-55%);
+    z-index: 10;
+    background: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    // box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  /* Left arrow */
+  .custom-arrow.left {
+    left: -40px;
+  }
+
+  /* Right arrow */
+  .custom-arrow.right {
+    right: -40px;
+  }
+
+  .custom-arrow:hover {
+    background: #f3f3f3;
+  }
+
+  /* Optional hover effect */
+  .custom-arrow:hover {
+    background: #f3f3f3;
+  }
+
+  .swiper-pagination {
+    position: static;
+
+    .swiper-pagination-bullet-active {
+      background-color: $primary;
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: .4;
+
+    &-active {
+      background: #fe650b;
+      opacity: 1;
+    }
+  }
+}

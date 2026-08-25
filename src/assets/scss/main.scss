@@ -1,0 +1,456 @@
+@import 'variables';
+@import 'Navbar';
+@import 'Slider';
+@import 'About';
+@import 'GroupCompanies';
+@import 'Topbar';
+@import 'BalasabBorade';
+@import 'Numbers';
+@import 'Marquee';
+@import 'Community';
+@import 'Footer';
+@import 'InnerContact';
+@import 'InnerGallary';
+@import 'InnerAbout';
+@import 'InnerCompanies';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+html,
+body {
+  overflow-x: hidden !important;
+  font-family: $montserrat !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $poppins;
+}
+
+.section-padding {
+  padding: 80px 0 !important;
+
+  @media(max-width:1220px) {
+    padding: 70px 0 !important;
+  }
+
+  @media(max-width:992px) {
+    padding: 60px 0 !important;
+  }
+
+  @media(max-width:768px) {
+    padding: 40px 0 !important;
+  }
+
+  @media(max-width:575px) {
+    padding: 30px 0 !important;
+  }
+}
+
+
+.founder-tag {
+  writing-mode: vertical-rl;
+  text-orientation: "";
+  font-family: Poppins, sans-serif;
+  // font-size: 50px;
+  color: transparent !important;
+  margin: 0;
+  font-weight: 500 !important;
+  -webkit-text-stroke: 2px #C7B180;
+}
+
+.common-button {
+  font-family: $poppins;
+  width: max-content;
+  height: auto;
+  border-radius: 9999px;
+  background: $primary;
+  color: $white;
+  // border: 2px solid $primary;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 20px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s all ease-in;
+  text-decoration: none;
+
+  &:hover {
+    transition: 0.3s all ease-in;
+    background: #af9d77;
+  }
+
+  img {
+    transition: 0.3s all ease-in;
+    width: 40px;
+    height: auto;
+  }
+
+  &:hover img {
+    transform: rotate(45deg);
+    transition: 0.3s all ease-in;
+  }
+
+  @media(max-width:768px) {
+    padding: 6px 6px 6px 16px;
+    font-size: $font-1rem;
+
+    img {
+      width: 36px;
+    }
+  }
+}
+
+// .common-button {
+//   font-family: $poppins;
+//   width: max-content;
+//   border-radius: 9999px;
+//   background-color: $primary;
+//   color: $white;
+//   border: none;
+
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 15px;
+
+//   padding: 8px 8px 8px 20px;
+
+//   font-size: 18px;
+//   font-weight: 500;
+//   text-decoration: none;
+//   cursor: pointer;
+
+//   transition: background-color 0.5s ease-in;
+
+//   &:hover {
+//     background-color: $txt;
+
+//     img {
+//       transform: rotate(45deg);
+//     }
+//   }
+
+//   img {
+//     width: 40px;
+//     height: auto;
+//     transition: transform 0.5s ease-in;
+//   }
+
+
+// }
+
+
+
+.heading-text {
+  font-size: clamp(1.5rem, 0.98rem + 2.6vw, 3.125rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.inner-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 0.98rem + 2.6vw, 3.125rem);
+  color: #1B1B1B;
+}
+
+
+.company-text {
+  font-size: clamp(1.5rem, 0.98rem + 2.6vw, 3.125rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 40px;
+}
+
+p {
+  line-height: clamp(28px, 4.5vw + 1rem, 33px);
+  font-size: $font-18 !important;
+
+  @media(max-width:576px) {
+    font-size: $font-1rem !important;
+  }
+}
+
+
+.intro-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 0.98rem + 2.6vw, 3.125rem);
+  color: #1B1B1B;
+  line-height: clamp(40px, 3.5vw + 1rem, 63px);
+  display: flex;
+  gap: 20px;
+
+  // Mobile (≤ 767px)
+  @media (max-width: 767px) {
+    line-height: clamp(33px, 3.5vw + 1rem, 40px);
+  }
+}
+
+.inner-page-header {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    height: 100%;
+  }
+
+  .header-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+
+    h1 {
+      font-family: $poppins;
+      font-weight: 700;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: transparent;
+      -webkit-text-stroke: 1px $white;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    height: 200px;
+
+    .header-content {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  ul.bread-crump {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+
+    a.active-lnk {
+      border-bottom: solid 1px $primary;
+    }
+
+    span {
+      color: $primary;
+    }
+
+    .no-desk {
+      display: none;
+
+    }
+
+    @media (max-width: 767px) {
+      gap: 5px;
+    }
+  }
+}
+
+.company-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 1.5vw + 1rem, 40px);
+  color: #1B1B1B;
+  line-height: clamp(33px, 2.5vw + 1rem, 45px);
+  display: flex;
+  gap: 20px;
+  text-align: left;
+
+  @media (max-width: 767px) {
+    line-height: 28px !important;
+  }
+}
+
+img.under-ln {
+  margin: 16px 0 20px 0;
+}
+
+ul.inner-list {
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 30px;
+
+  li {
+    padding-left: 22px;
+    background-image: url('../images/list-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 0 center;
+  }
+}
+
+.no-mobile {
+  display: block;
+
+  /* Small Tablets */
+  @media (min-width: 576px) and (max-width: 767px) {
+    display: none;
+  }
+
+  /* Tablets / iPads */
+  @media (min-width: 768px) and (max-width: 992px) {
+    display: none;
+  }
+
+  /* Large Tabs & Small Desktops */
+  @media (min-width: 992px) and (max-width: 1440px) {}
+}
+
+.no-desk {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.08);
+    background: #1ebe5b;
+  }
+}
+
+.whatsapp-icon {
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+// cta section 
+// CTA Section Styles
+.cta-section {
+  .cta-wrapper {
+    padding: 56px 40px;
+    background-image: url('../images/network-map.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(135deg, rgba(20, 22, 27, 0.92) 0%, rgba(20, 22, 27, 0.75) 100%);
+      z-index: 1;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+
+      .cta-badge {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #e2b13c; // Primary accent color
+      }
+
+      .cta-title {
+        font-size: clamp(1.75rem, 3vw, 2.35rem);
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .cta-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 640px;
+      }
+
+      .cta-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .cta-section .cta-wrapper {
+    padding: 36px 24px;
+    border-radius: 20px;
+  }
+}
+

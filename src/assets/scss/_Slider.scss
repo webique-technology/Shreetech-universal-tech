@@ -1,0 +1,170 @@
+.hero-slider {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $white;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none !important;
+      color: $white;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .slide-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    color: $white;
+    animation: fadeUp 0.8s ease-out;
+    text-align: center;
+
+    @media(max-width:768px) {
+      background: rgba(0, 0, 0, 0.68);
+    }
+
+    .container {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Hide arrows on mobile */
+
+  }
+
+
+
+  .sm-title {
+    font-family: $montserrat;
+    color: $primary;
+    font-size: $font-18;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .subtit {
+    margin: 0 0 30px;
+  }
+
+  h1 {
+    font-size: $hero-h1;
+    font-weight: 700;
+    font-family: $poppins;
+    margin-bottom: 20px;
+
+    span {
+      color: $primary;
+      color: transparent;
+      -webkit-text-stroke: 2px $white;
+      /* thickness + color */
+    }
+  }
+
+  p {
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+
+
+
+
+
+
+  /* Swiper Pagination */
+  .swiper-pagination-bullet {
+    background: $white;
+    opacity: 0.6;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 1200px) {
+    height: 650px;
+  }
+
+  @media (max-width: 992px) {
+    height: 600px;
+
+    .slide-content {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 500px;
+
+    .slide-overlay {
+      padding-left: 0;
+    }
+
+    .slide-content {
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    height: 380px;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.contact-form-wrap {
+  padding: 80px 0 80px 0;
+
+  .intro {
+    font-size: clamp(1rem, 0.82rem + 0.9vw, 1.5625rem);
+    // margin: 0 0 10px;
+  }
+
+  .contact-info-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-form-container {
+    form {
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        border-radius: 20px;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+        }
+      }
+
+      textarea {
+        grid-column: span 2; // full width
+        min-height: 150px;
+        resize: vertical;
+        border-radius: 20px;
+      }
+
+      button {
+        grid-column: span 2; // full width
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $txt;
+        }
+      }
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+
+        textarea,
+        button {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    .contact-submit {
+      background-color: $primary;
+      border-radius: 35px;
+      width: max-content;
+    }
+
+    .contact-button-wrap {
+      text-align: right;
+      width: 100%;
+      grid-column: span 2;
+    }
+  }
+
+  .contact-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+}
+
+.contact-card {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  // margin: 0 0 40px;
+
+  img {
+    margin: 5px 0 0;
+    border: solid 1px $primary;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+
+  p {
+    font-size: 16px !important;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  a {
+    color: $txt;
+    text-decoration: none;
+  }
+}
+
+p.intro {
+  font-family: $poppins;
+  font-weight: 600;
+  color: $conttext;
+  margin: 20px 0 30px 0;
+}

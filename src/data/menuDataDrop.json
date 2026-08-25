@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Home",
+    "path": "/"
+
+  },
+  {
+    "label": "About",
+    "path": "/about"
+
+  },
+
+   {
+    "label": "Companies",
+    "path": "/companies"
+
+  },
+  {
+    "label": "Companies",
+
+    "dropdown": [
+      { "label": "Company 1", "path": "/company-1" },
+      { "label": "Company 2", "path": "/company-2" },
+      { "label": "Company 3", "path": "/company-3" }
+    ]
+  },
+  {
+    "label": "Gallery",
+    "path": "/gallery"
+
+  },
+  {
+    "label": "Contact",
+    "path": "/contact"
+
+  }
+]
