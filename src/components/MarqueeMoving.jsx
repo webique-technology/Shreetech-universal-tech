@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import flower from "../assets/images/flower.svg";
 import { Container } from "react-bootstrap";
 import { marqueeData } from "../data/clientData";
 

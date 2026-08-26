@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import InnerPageHeader from "../components/InnerPageHeader";
-import aboutImg from "../assets/images/about-inner.jpg";
+import aboutImg from "../assets/images/page-header.jpg";
 import { Col, Container, Row } from "react-bootstrap";
 import { ProductData } from "../data/productData";
 import { marqueeData } from "../data/clientData";

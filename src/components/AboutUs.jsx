@@ -2,58 +2,43 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
 import abt1 from "../assets/images/who-we-are.webp";
-// import abt2 from "../assets/images/aboutus-2.svg";
-import abt2 from "../assets/images/borade _about_img_2.png";
 import abt3 from "../assets/images/aboutus-3.svg";
 import CountUp from "react-countup";
 import buttoArr from "../assets/images/button-circle.svg";
 import { FiUsers } from "react-icons/fi";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile";
 
 import groupCompany from "../assets/images/about-us.jpg";
 
+// Single-run on-mount/reload animation variants
 const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const slideLeft = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
-const slideRight = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
+const AboutUs = ({ showStoryButton = true, showCards = true }) => {
+  const isMobile = useIsMobile();
 
-const AboutUs = ({
-  showStoryButton = true,
-  showFirstImg = true,
-  showCards = true,
-  showBottomBackground = true,
-  showBackground = true,
-  className = "",
-}) => {
-  const isMobile = window.innerWidth <= 768;
   const aboutData = {
     smallText: "Who we are",
     titleAbout: "Your Trusted Partner for Advanced Food & Dairy Engineering",
     paragraph:
       "SHREETECH UNIVERSAL TECHNOLOGIES is a reliable partner to a wide range of sectors in Food & Dairy industry by offering quality & technologically advanced end to end solutions. We have our business associates based in India, Germany, Italy, UK, Taiwan, Thailand & China. We have a strong technical team to provide sales as well as after sales service support.",
-    // firstCard: {
-    //   small: "global reach",
-    //   smallImg: HiOutlineBuildingOffice2,
-    //   number: 85,
-    //   title: "offices <br> worldwide"
-    // },
-    // secondCard: {
-    //   small: "local expertise",
-    //   smallImg: FiUsers,
-    //   number: 150,
-    //   title: "Employees <br> Working"
-    // },
     firstCard: {
       small: "Happy Clients",
       smallImg: HiOutlineBuildingOffice2,
@@ -84,68 +69,87 @@ const AboutUs = ({
   const FirstIcon = aboutData.firstCard.smallImg;
   const SecondIcon = aboutData.secondCard.smallImg;
 
+  // Dynamic tags: native HTML tags on mobile (no motion wrapper overhead), motion tags on desktop
+  const SectionWrapper = isMobile ? "div" : motion.div;
+  const MotionImg = isMobile ? "img" : motion.img;
+  const MotionH5 = isMobile ? "h5" : motion.h5;
+  const MotionH2 = isMobile ? "h2" : motion.h2;
+  const MotionP = isMobile ? "p" : motion.p;
+  const MotionDiv = isMobile ? "div" : motion.div;
+
   return (
     <>
       <div className="about-section">
-        {/* MAIN WRAPPER WITH SCROLL ANIMATION */}
-        <motion.div
+        {/* MAIN WRAPPER WITH ON-LOAD ANIMATION */}
+        <SectionWrapper
           className="company-section"
-          variants={isMobile ? {} : fadeUp}
-          initial={isMobile ? "visible" : "hidden"}
-          whileInView={isMobile ? "visible" : "visible"}
-          viewport={{ once: true, amount: 0.2 }}
+          {...(!isMobile && {
+            variants: fadeUp,
+            initial: "hidden",
+            whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+          })}
         >
           <Container>
             <Row>
               {/* LEFT IMAGE + BUTTON */}
               {showStoryButton && (
                 <Col md={3} className="no-mobile mb-4 d-none d-lg-block">
-                  <motion.img
+                  <MotionImg
                     src={getImage(aboutData.imageMap.coluOne)}
                     alt=""
                     className="img-fluid"
-                    variants={slideLeft}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false }}
+                    loading="lazy"
+                    {...(!isMobile && {
+                      variants: slideLeft,
+                      initial: "hidden",
+                      whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                    })}
                   />
                 </Col>
               )}
 
               <Col md={12} xs={12} lg={9} xl={9}>
                 {/* SMALL TEXT */}
-                <motion.h5
-                  variants={isMobile ? {} : fadeUp}
-                  initial={isMobile ? "visible" : "hidden"}
-                  whileInView={isMobile ? "visible" : "visible"}
-                  viewport={{ once: false }}
+                <MotionH5
+                  {...(!isMobile && {
+                    variants: fadeUp,
+                    initial: "hidden",
+                    whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                  })}
                 >
                   {aboutData.smallText}
-                </motion.h5>
+                </MotionH5>
 
                 {/* TITLE */}
-                <motion.h2
+                <MotionH2
                   className="intro-title heading-text mb-2"
-                  variants={isMobile ? {} : fadeUp}
-                  initial={isMobile ? "visible" : "hidden"}
-                  whileInView={isMobile ? "visible" : "visible"}
-                  viewport={{ once: false }}
+                  {...(!isMobile && {
+                    variants: fadeUp,
+                    initial: "hidden",
+                    whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                  })}
                 >
                   {aboutData.titleAbout}
-                </motion.h2>
+                </MotionH2>
 
                 <Row>
-                  {/* SECOND IMAGE */}
+                  {/* SECOND IMAGE / TEXT */}
                   <Col lg={6}>
-                    <motion.p
+                    <MotionP
                       className="main-paragraph-about mb-2"
-                      variants={isMobile ? {} : fadeUp}
-                      initial={isMobile ? "visible" : "hidden"}
-                      whileInView={isMobile ? "visible" : "visible"}
-                      viewport={{ once: false }}
+                      {...(!isMobile && {
+                        variants: fadeUp,
+                        initial: "hidden",
+                        whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                      })}
                     >
                       {aboutData.paragraph}
-                    </motion.p>
+                    </MotionP>
                   </Col>
 
                   {/* TEXT + CARDS */}
@@ -158,12 +162,14 @@ const AboutUs = ({
                       <Row className="w-100 d-flex align-items-center justify-content-center">
                         {/* FIRST CARD */}
                         <Col xs={6} sm={5} md={6} className="h-100">
-                          <motion.div
+                          <MotionDiv
                             className="bottom-sec-1"
-                            variants={isMobile ? {} : fadeUp}
-                            initial={isMobile ? "visible" : "hidden"}
-                            whileInView={isMobile ? "visible" : "visible"}
-                            viewport={{ once: false }}
+                            {...(!isMobile && {
+                              variants: fadeUp,
+                              initial: "hidden",
+                              whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                            })}
                           >
                             <p className="small-txt">
                               {aboutData.firstCard.small}
@@ -175,8 +181,10 @@ const AboutUs = ({
 
                             <h2 className="col-title">
                               <CountUp
-                                duration={5}
+                                duration={3}
                                 end={aboutData.firstCard.number}
+                                enableScrollSpy
+                                scrollSpyOnce
                               />
                               +
                             </h2>
@@ -187,17 +195,19 @@ const AboutUs = ({
                                 __html: aboutData.firstCard.title,
                               }}
                             />
-                          </motion.div>
+                          </MotionDiv>
                         </Col>
 
                         {/* SECOND CARD */}
                         <Col xs={6} sm={5} md={6} className="h-100">
-                          <motion.div
+                          <MotionDiv
                             className="bottom-sec-1 bs-2"
-                            variants={isMobile ? {} : fadeUp}
-                            initial={isMobile ? "visible" : "hidden"}
-                            whileInView={isMobile ? "visible" : "visible"}
-                            viewport={{ once: false }}
+                            {...(!isMobile && {
+                              variants: fadeUp,
+                              initial: "hidden",
+                              whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                            })}
                           >
                             <p className="small-txt">
                               {aboutData.secondCard.small}
@@ -209,8 +219,10 @@ const AboutUs = ({
 
                             <h2 className="col-title">
                               <CountUp
-                                duration={5}
+                                duration={3}
                                 end={aboutData.secondCard.number}
+                                enableScrollSpy
+                                scrollSpyOnce
                               />
                               +
                             </h2>
@@ -221,33 +233,32 @@ const AboutUs = ({
                                 __html: aboutData.secondCard.title,
                               }}
                             />
-                          </motion.div>
+                          </MotionDiv>
                         </Col>
                       </Row>
                     )}
+                    <MotionDiv
+                      className="d-flex w-100 align-items-end justify-content-center justify-content-lg-end"
+                      {...(!isMobile && {
+                        variants: fadeUp,
+                        initial: "hidden",
+                        whileInView: "visible",
+            viewport: { once: true, amount: 0.2 },
+                      })}
+                    >
+                      <Link
+                        to="/about"
+                        className="common-button about-button mt-0"
+                      >
+                        Our Story <img src={buttoArr} alt="button arrow" />
+                      </Link>
+                    </MotionDiv>
                   </Col>
                 </Row>
               </Col>
-
-              <Col xs={12}>
-                <motion.div
-                  variants={isMobile ? {} : fadeUp}
-                  initial={isMobile ? "visible" : "hidden"}
-                  whileInView={isMobile ? "visible" : "visible"}
-                  viewport={{ once: false }}
-                  className="d-flex aligh-items-center justify-content-center"
-                >
-                  <Link
-                    to="/about"
-                    className="common-button about-button d-none d-lg-block"
-                  >
-                    Our Story <img src={buttoArr} alt="button arrow" />
-                  </Link>
-                </motion.div>
-              </Col>
             </Row>
           </Container>
-        </motion.div>
+        </SectionWrapper>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InnerPageHeader from "../components/InnerPageHeader";
-import aboutImg from "../assets/images/about-inner.jpg";
+import aboutImg from "../assets/images/page-header.jpg";
 import buttoArr from "../assets/images/button-circle.svg";
 import contactH from "../assets/images/footer-home.svg";
 import contactP from "../assets/images/footer-phone.svg";
@@ -194,16 +194,15 @@ const Contact = () => {
 
       <div className="contact-form-wrap">
         <Container>
-          <Row className="justify-content-between gy-5">
+          <Row className="justify-content-between g-4">
             <Col md={6} lg={6}>
-              <h2 className="company-title">
-                We would love to <br />
-                hear from you
+              <h2 className="fs-1 fw-bold mb-3 mb-md-4">
+                We would love to hear from you
               </h2>
 
-              <p className="mb-2 mb-md-4 mt-0 intro">
+              {/* <p className="mb-2 mb-md-4 mt-0 intro">
                 {ConactData.registerd_office}
-              </p>
+              </p> */}
 
               <div className="contact-form-container">
                 <form onSubmit={onSubmit} noValidate className="row gap-0">
@@ -309,17 +308,17 @@ const Contact = () => {
               </div>
             </Col>
 
-            <Col md={5} lg={5}>
+            <Col md={6} lg={5}>
               <div className="contact-grid d-flex flex-column h-100 gap-3 gap-md-4">
-                <h2 style={{ marginBottom: "30px" }} className="company-title">
+                {/* <h2 style={{ marginBottom: "30px" }} className="company-title">
                   Contact Information
-                </h2>
+                </h2> */}
 
                 {contactCards.map((card, index) => (
                   <div key={index} className="contact-card">
                     <img src={card.icon} alt={card.title} className="icon" />
                     <div className="contp-text">
-                      <h4>{card.title}</h4>
+                      <h4 className="fw-semibold text-uppercase fs-6">{card.title}</h4>
 
                       {card.type === "address" && (
                         <p>
@@ -379,7 +378,7 @@ const Contact = () => {
       </div>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31304.111162182417!2d73.7429474471137!3d19.964344880565005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb4b46622245%3A0xaeabdc23f8dd9daa!2sAtlanta%20Shoppers%20Mall!5e1!3m2!1sen!2sin!4v1765195683637!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4510.635282808986!2d72.8388267!3d19.1297028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b628081ba7ef%3A0x97c600908243bf09!2sDLH%20Darpan!5e1!3m2!1sen!2sin!4v1787650775754!5m2!1sen!2sin"
         width="100%"
         height="350"
         style={{ border: 0, display: "block" }}

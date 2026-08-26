@@ -6,7 +6,7 @@ import fEmail from "../assets/images/footer-email.svg";
 import fPhone from "../assets/images/footer-phone.svg";
 import fUnderline from "../assets/images/footer-underline.svg";
 import { Link } from "react-router-dom";
-import FuterLgo from "../assets/images/shreetech-logo.webp";
+import FuterLgo from "../assets/images/footer-logo.png";
 import {
   FaFacebookF,
   FaTwitter,
@@ -19,7 +19,7 @@ import { ConactData } from "../data/contactData";
 const footerData = {
   about: {
     description:
-      "The proper Footer on proper time can preserve you protection. We assist you make sure everybody forward",
+      "Empowering the food and dairy sectors with cutting-edge technology, sanitary design, and dedicated global engineering support.",
     socialIcons: [
       { icon: FaFacebookF, url: "https://facebook.com" },
       { icon: FaTwitter, url: "https://twitter.com" },
@@ -32,8 +32,8 @@ const footerData = {
     links: [
       { name: "Home", path: "/" },
       { name: "About us", path: "/about" },
-      { name: "Product", path: "/product-profile" },
-      { name: "Gallery", path: "/gallery" },
+      { name: "Product", path: "/product" },
+      { name: "Video Gallery", path: "/video-gallery" },
       { name: "Clients", path: "/clients" },
       { name: "Contact", path: "/contact" },
     ],
@@ -87,11 +87,11 @@ const Footer = () => {
         <Container>
           <Row className="d-flex row-gap-4 flex-md-row">
             {/* ABOUT */}
-            <Col xs={12} sm={12} md={4} lg={3}>
+            <Col xs={12} sm={12} md={6} lg={3}>
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible" viewport={{ once: true, amount: 0.2 }}
                 className="description"
               >
                 <div className="futer-lgo">
@@ -117,11 +117,11 @@ const Footer = () => {
             <Col
               xs={12}
               sm={12}
-              md={3}
+              md={6}
               lg={3}
               className="d-flex align-items-start justify-content-start justify-content-md-center gap-3"
             >
-              <motion.div variants={fadeUp} initial="hidden" animate="visible">
+              <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                 <h3>{footerData.quickLinks.title}</h3>
                 <img src={fUnderline} className="under-ln" alt="underline" />
                 <ul className="footer-links">
@@ -139,7 +139,7 @@ const Footer = () => {
 
             {/* REGISTERED OFFICE BLOCK */}
             <Col xs={12} sm={12} md={6} lg={3}>
-              <motion.div variants={fadeUp} initial="hidden" animate="visible">
+              <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                 <h3>Registered Office</h3>
                 <img src={fUnderline} className="under-ln" alt="underline" />
                 <div className="footer-contact-wrap d-flex flex-column gap-3">
@@ -211,7 +211,7 @@ const Footer = () => {
 
             {/* ADMIN OFFICE BLOCK */}
             <Col xs={12} sm={12} md={6} lg={3}>
-              <motion.div variants={fadeUp} initial="hidden" animate="visible">
+              <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
                 <h3>Admin Office</h3>
                 <img src={fUnderline} className="under-ln" alt="underline" />
                 <div className="footer-contact-wrap d-flex flex-column gap-3">
@@ -288,34 +288,12 @@ const Footer = () => {
                 {/* Copyright */}
                 <Col
                   xs={12}
-                  md={6}
-                  className="d-flex align-items-center justify-content-md-start justify-content-center"
+                  className="d-flex align-items-center justify-content-center"
                 >
                   <p className="text-center text-md-start mb-0">
                     &copy; Copyright {new Date().getFullYear()}{" "}
                     <span>SHREETECH</span> Rights Reserved.
                   </p>
-                </Col>
-
-                {/* Developer Credit */}
-                <Col
-                  xs={12}
-                  md={6}
-                  className="d-flex align-items-center justify-content-center justify-content-md-end"
-                >
-                  <div className="f-right">
-                    <p className="mb-0">
-                      Designed & Developed by{" "}
-                      <Link
-                        to="https://webique.in/"
-                        className="text-decoration-none fw-bold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Webique Technology
-                      </Link>
-                    </p>
-                  </div>
                 </Col>
               </Row>
             </Container>

@@ -46,8 +46,8 @@ function App() {
         {/* main website routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/product-profile" element={<ProductProfile />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/product" element={<ProductProfile />} />
+        <Route path="/video-gallery" element={<Gallery />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/contact" element={<Contact />} />
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import InnerPageHeader from "../components/InnerPageHeader";
-import aboutImg from "../assets/images/inner-banner.svg";
+import aboutImg from "../assets/images/page-header.jpg";
 import mission from "../assets/images/mission.svg";
 import vision from "../assets/images/vision.svg";
 import AboutUs from "../components/AboutUs";

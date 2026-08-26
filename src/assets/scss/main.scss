@@ -4,7 +4,6 @@
 @import 'About';
 @import 'GroupCompanies';
 @import 'Topbar';
-@import 'BalasabBorade';
 @import 'Numbers';
 @import 'Marquee';
 @import 'Community';
@@ -68,7 +67,7 @@ h5 {
   font-family: $poppins;
   width: max-content;
   height: auto;
-  border-radius: 9999px;
+  border-radius: 50px;
   background: $primary;
   color: $white;
   // border: 2px solid $primary;

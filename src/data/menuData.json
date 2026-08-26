@@ -8,12 +8,12 @@
     "path": "/about"
   },
   {
-    "label": "Product Profile",
-    "path": "/product-profile"
+    "label": "Product",
+    "path": "/product"
   },
   {
-    "label": "Gallery",
-    "path": "/gallery"
+    "label": "Video Gallery",
+    "path": "/video-gallery"
   },
   {
     "label": "Clients",

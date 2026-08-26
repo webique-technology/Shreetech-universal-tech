@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const useDisableMotion = (breakpoint = 768) => {
-  const [disableMotion, setDisableMotion] = useState(false);
-
-  useEffect(() => {
-    const check = () => setDisableMotion(window.innerWidth <= breakpoint);
-    check();
-
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, [breakpoint]);
-
+  const disableMotion = useIsMobile(breakpoint);
   return disableMotion;
 };
 

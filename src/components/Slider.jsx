@@ -47,8 +47,7 @@ const Slider = () => {
   return (
     <div className="hero-slider">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3500 }}
         loop={true}

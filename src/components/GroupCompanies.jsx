@@ -1,242 +1,122 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import image1 from "../assets/images/process-consultancy.jpg";
-import image2 from "../assets/images/design-consultancy.jpg";
-import image3 from "../assets/images/equipment-supply.jpg";
-import image4 from "../assets/images/int-service-supply.jpg";
-import image5 from "../assets/images/quality-compliance.jpg";
+import { useNavigate } from "react-router-dom";
+
+import image1 from "../assets/images/process-consultancy.webp";
+import image2 from "../assets/images/design-consultancy.webp";
+import image3 from "../assets/images/equipment-supply.webp";
+import image4 from "../assets/images/int-service-supply.webp";
+import image5 from "../assets/images/quality-compliance.webp";
 import arrowButton from "../assets/images/arrow-2.svg";
-import tabImage from "../assets/images/arrow.svg";
-import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
-// Animation Variants...
-// (keep all your animation variants as they are)
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-};
-
-const slideLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
-
-const slideRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
-
-const zoomFade = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
-};
-
-const isMobileTwo = window.innerWidth <= 768;
 const accordionData = [
   {
     id: 1,
-    logo: "",
     title: "Process Consultancy",
-    content: "",
+    content: "Comprehensive audits, flow optimization, and hygienic design strategies tailored for dairy and liquid food processing plants.",
     image: image1,
-    path: "",
+    path: "/services",
   },
   {
     id: 2,
-    logo: "",
     title: "Design Consultancy",
-    content: "",
+    content: "Complete plant layout design, P&ID creation, 3D modelling, and regulatory-compliant architectural blueprints.",
     image: image2,
-    path: "",
+    path: "/services",
   },
   {
     id: 3,
-    logo: "",
     title: "Equipment Supply",
-    content: "",
+    content: "SS304/SS316 pasteurizers, homogenizers, CIP systems, mixing vessels, and automated filling machinery.",
     image: image3,
-    path: "",
+    path: "/services",
   },
   {
     id: 4,
-    logo: "",
     title: "Integrate Service & Supply",
-    content: "",
+    content: "End-to-end turnkey project integration, from equipment procurement and electrical automation to on-site testing.",
     image: image4,
-    path: "",
+    path: "/services",
   },
   {
     id: 5,
-    logo: "",
     title: "Quality Compliance",
-    content: "",
+    content: "Rigorous quality assurance, sanitary standard certifications (GMP/ISO), and pressure vessel safety validation.",
     image: image5,
-    path: "",
+    path: "/services",
   },
 ];
 
 const GroupCompanies = () => {
   const [active, setActive] = useState(1);
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile screen
-  useEffect(() => {
-    const checkWidth = () => setIsMobile(window.innerWidth < 768);
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
-    return () => window.removeEventListener("resize", checkWidth);
-  }, []);
-
-  // Handle click on accordion
   const handleAccordionClick = (id) => {
     setActive(id);
-
-    // On mobile → navigate instead of just activating
-    // if (isMobile) {
-    //   navigate("/about");
-    // }
   };
 
-  const handleNavClick = () => navigate("/about");
+  const activeItem = accordionData.find((item) => item.id === active) || accordionData[0];
 
   return (
-    <motion.div
-      className="group-companies"
-      variants={isMobileTwo ? {} : fadeUp}
-      initial={isMobileTwo ? "visible" : "hidden"}
-      whileInView={isMobileTwo ? "visible" : "visible"}
-      viewport={{ once: false, amount: 0.2 }}
-    >
+    <section className="group-companies py-4 py-lg-5">
       <Container>
-        <Row className="justify-content-between flex-row-reverse row-gap-4 flex-md-row ">
-          {/* LEFT COLUMN */}
+        <Row className="justify-content-between flex-row-reverse row-gap-4 flex-md-row align-items-start">
+          {/* LEFT CONTENT */}
           <Col xs={12} md={6} lg={6}>
-            <motion.h2
-              className="heading-text"
-              variants={isMobileTwo ? {} : fadeUp}
-              initial={isMobileTwo ? "visible" : "hidden"}
-              whileInView={isMobileTwo ? "visible" : "visible"}
-              viewport={{ once: false }}
-            >
-              Our Services
-            </motion.h2>
+            <div className="services-left-content">
+              <h2 className="heading-text mb-3 mb-md-5">Our Services</h2>
+              {/* <p className="gp-text text-muted mb-4">
+                Project Enabler, Not Just An Equipment Provider.
+              </p> */}
 
-            <motion.p
-              variants={isMobileTwo ? {} : fadeUp}
-              className="gp-text"
-              initial={isMobileTwo ? "visible" : "hidden"}
-              whileInView={isMobileTwo ? "visible" : "visible"}
-              viewport={{ once: false }}
-            >
-              Project Enabler Not Just An Equipment Provider.
-            </motion.p>
-
-            <motion.div
-              className="accordion-left"
-              variants={isMobileTwo ? {} : fadeUp}
-              initial={isMobileTwo ? "visible" : "hidden"}
-              whileInView={isMobileTwo ? "visible" : "visible"}
-              viewport={{ once: false }}
-            >
-              {accordionData.map((item) => (
-                <motion.div
-                  key={item.id}
-                  className={`accordion-item ${active === item.id ? "active" : ""}`}
-                  onClick={() => handleAccordionClick(item.id)}
-                  variants={fadeUp}
-                >
-                  <button className="accordion-header">
-                    <span>{item.title}</span>
-                    {/* <Link
-                      to={item.path}
-                      target="_blank"
-                      className="d-none d-md-block"
-                    >
-                    </Link> */}
+              <div className="accordion-left">
+                {accordionData.map((item) => (
+                  <div
+                    key={item.id}
+                    className={`accordion-item ${active === item.id ? "active" : ""}`}
+                    onClick={() => handleAccordionClick(item.id)}
+                  >
+                    <button type="button" className="accordion-header">
+                      <span>{item.title}</span>
                       <img src={arrowButton} alt="arrow" />
-                  </button>
-                </motion.div>
-              ))}
-            </motion.div>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </Col>
 
-          {/* RIGHT COLUMN */}
+          {/* RIGHT IMAGE PREVIEW */}
           <Col
             xs={12}
             md={6}
             lg={5}
             className="d-flex align-items-end justify-content-center"
           >
-            <motion.div
-              className="images-wrap"
-              //  variants={isMobileTwo ? {} : fadeUp}
-              // initial={isMobileTwo ? "visible" : "hidden"}
-              // whileInView={isMobileTwo ? "visible" : "visible"} viewport={{ once: false }}
-            >
-              {/* SHOW IMAGE ONLY ON DESKTOP/TABLET */}
-
-              <motion.img
-                key={active}
-                src={accordionData.find((i) => i.id === active)?.image}
-                alt="Accordion"
-                className="accordion-image"
-                variants={zoomFade}
-                initial="hidden"
-                animate="visible"
-              />
-
-              {/* <motion.div
-                variants={isMobileTwo ? {} : fadeUp}
-                initial={isMobileTwo ? "visible" : "hidden"}
-                whileInView={isMobileTwo ? "visible" : "visible"}
-                viewport={{ once: false }}
-                className="company-logo"
-              >
+            <div className="images-wrap position-relative w-100 overflow-hidden rounded-4">
+              <div className="image-aspect-container position-relative">
                 <img
-                  src={accordionData.find((i) => i.id === active)?.logo}
-                  alt={accordionData.find((i) => i.id === active)?.title}
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  className="accordion-image w-100 h-100 object-fit-cover rounded-4 position-absolute top-0 start-0"
+                  decoding="async"
+                  loading="lazy"
                 />
-              </motion.div> */}
+              </div>
 
-              <motion.div
-                className="image-text d-flex justify-content-between"
-                variants={isMobileTwo ? {} : fadeUp}
-                initial={isMobileTwo ? "visible" : "hidden"}
-                whileInView={isMobileTwo ? "visible" : "visible"}
-                viewport={{ once: false }}
-              >
+              <div className="image-text d-flex justify-content-between p-3">
                 <div className="t-wrap">
-                  <h3>{accordionData.find((i) => i.id === active)?.title}</h3>
-                  <p className="d-none d-md-block">
-                    {accordionData.find((i) => i.id === active)?.content}
+                  <h4 className="mb-1 text-white">{activeItem.title}</h4>
+                  <p className="d-none fs-6 d-md-block text-white-50 mb-0 small">
+                    {activeItem.content}
                   </p>
                 </div>
-
-                {/* a-wrap always navigates */}
-                {/* <a
-                  href={accordionData.find((i) => i.id === active)?.path}
-                  className="a-wrap"
-                  target="_blank"
-                >
-                  <motion.img
-                    src={tabImage}
-                    variants={isMobileTwo ? {} : fadeUp}
-                    initial={isMobileTwo ? "visible" : "hidden"}
-                    whileInView={isMobileTwo ? "visible" : "visible"}
-                    // onClick={handleNavClick}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  />
-                </a> */}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
-    </motion.div>
+    </section>
   );
 };
 

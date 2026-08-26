@@ -1,5 +1,5 @@
 .about-section {
-    padding: 78px 0 120px 0;
+    padding: 90px 0 70px;
     width: 100%;
     height: auto;
     position: relative;
@@ -168,24 +168,6 @@
         }
     }
 
-    background-image: url(/src/assets/images/about-blur.svg);
-    background-position: left;
-    background-repeat: no-repeat;
-
-
-    &::after {
-        content: '';
-        width: 100%;
-        min-height: 100px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-image: url("../images/chairman-bottom.svg");
-        background-repeat: repeat-x;
-        background-position: left bottom;
-        z-index: -1;
-    }
-
     // Mobile (≤ 768px)
     .about-button {
         @media (max-width: 768px) {
@@ -207,5 +189,3 @@
         font-size: clamp(1.625rem, 0.745rem + 4.4vw, 4.375rem);
     }
 }
-
-

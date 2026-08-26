@@ -1,7 +1,7 @@
 import React from "react";
 import InnerPageHeader from "../components/InnerPageHeader";
 import { motion } from "framer-motion";
-import aboutImg from "../assets/images/about-inner.jpg";
+import aboutImg from "../assets/images/page-header.jpg";
 import { Col, Container, Row } from "react-bootstrap";
 import buttoArr from "../assets/images/button-circle.svg";
 import { Link } from "react-router-dom";
