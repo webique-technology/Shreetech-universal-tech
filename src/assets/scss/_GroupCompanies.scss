@@ -9,46 +9,6 @@
     font-family: "Montserrat", sans-serif;
   }
 
-  button.accordion-header {
-    border: none;
-    background: $secondary ;
-    color: $white;
-    padding: 10px 16px 10px 45px;
-    width: 100%;
-    border-radius: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // max-height: 76px;
-    text-align: left;
-    font-size: clamp(16px, 0.5vw + 1rem, $font-25);
-
-    span {
-      transition: color 0.3s ease;
-    }
-
-    img {
-      transition: transform 0.3s ease;
-      margin-left: 10px;
-      width: 50px;
-      height: 50px;
-
-      @media (max-width: 768px) {
-        width: 30px;
-        height: 30px;
-      }
-
-      // Small Mobile (≤ 480px)
-      @media (max-width: 480px) {
-        width: 18px;
-      }
-    }
-
-    @media (max-width: 992px) {
-      padding: 10px 10px 10px 30px;
-    }
-  }
-
   h2 {
     font-weight: 700;
     text-align: center;
@@ -60,11 +20,10 @@
     margin: 0 0 44px;
     color: #ffffffcf !important;
 
-    @media(max-width:576px) {
+    @media (max-width: 576px) {
       margin-bottom: 24px;
     }
   }
-
 
   .accordion-left {
     display: flex;
@@ -72,18 +31,61 @@
     gap: 35px;
 
     .accordion-item {
+      background: transparent;
+      border: none;
       cursor: pointer;
+
+      .accordion-header {
+        border: none;
+        background: $secondary;
+        color: $white;
+        padding: 10px 16px 10px 45px;
+        width: 100%;
+        border-radius: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        font-size: clamp(16px, 0.5vw + 1rem, $font-25);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        span {
+          transition: color 0.3s ease;
+        }
+
+        img {
+          transition: transform 0.3s ease;
+          margin-left: 10px;
+          width: 50px;
+          height: 50px;
+
+          @media (max-width: 768px) {
+            width: 30px;
+            height: 30px;
+          }
+
+          @media (max-width: 480px) {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        @media (max-width: 992px) {
+          padding: 10px 10px 10px 30px;
+        }
+      }
 
       &.active {
         .accordion-header {
-          background-color: $primary; // active tab text blue
+          background-color: $primary;
 
           span {
             color: $white;
           }
 
           img {
-            transform: rotate(-50deg); // arrow rotate 30deg up
+            transform: rotate(-50deg);
           }
         }
       }
@@ -108,9 +110,11 @@
     }
 
     @media (max-width: 576px) {
-      .accordion-header {
-        padding: 8px 15px !important;
-        font-size: 14px !important;
+      .accordion-item {
+        .accordion-header {
+          padding: 8px 15px !important;
+          font-size: 14px !important;
+        }
       }
     }
   }
@@ -138,6 +142,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: opacity 0.3s ease-in-out;
       }
     }
 
@@ -148,7 +153,9 @@
       left: 0;
       width: 100%;
       height: 60%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -177,7 +184,6 @@
   }
 }
 
-
 .achivement-wrap {
   width: 100%;
   height: auto;
@@ -197,7 +203,6 @@
   }
 
   // product profile
-
 
   .image-wrap {
     position: relative;
@@ -312,47 +317,6 @@
         }
       }
     }
-  }
-
-  // .product-sec-card {}
-
-  .custom-arrow {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-55%);
-    z-index: 10;
-    background: $white;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    cursor: pointer;
-    // box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
-
-  /* Left arrow */
-  .custom-arrow.left {
-    left: -40px;
-  }
-
-  /* Right arrow */
-  .custom-arrow.right {
-    right: -40px;
-  }
-
-  .custom-arrow:hover {
-    background: $txt;
-    color: $white;
-  }
-
-  /* Optional hover effect */
-  .custom-arrow:hover {
-    background: $txt;
-    color: $white;
   }
 
   .swiper-pagination {

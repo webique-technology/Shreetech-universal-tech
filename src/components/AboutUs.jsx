@@ -104,7 +104,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                       variants: slideLeft,
                       initial: "hidden",
                       whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                      viewport: { once: true, amount: 0.2 },
                     })}
                   />
                 </Col>
@@ -117,7 +117,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                     variants: fadeUp,
                     initial: "hidden",
                     whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                    viewport: { once: true, amount: 0.2 },
                   })}
                 >
                   {aboutData.smallText}
@@ -130,7 +130,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                     variants: fadeUp,
                     initial: "hidden",
                     whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                    viewport: { once: true, amount: 0.2 },
                   })}
                 >
                   {aboutData.titleAbout}
@@ -145,7 +145,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                         variants: fadeUp,
                         initial: "hidden",
                         whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                        viewport: { once: true, amount: 0.2 },
                       })}
                     >
                       {aboutData.paragraph}
@@ -168,7 +168,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                               variants: fadeUp,
                               initial: "hidden",
                               whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                              viewport: { once: true, amount: 0.2 },
                             })}
                           >
                             <p className="small-txt">
@@ -206,7 +206,7 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                               variants: fadeUp,
                               initial: "hidden",
                               whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                              viewport: { once: true, amount: 0.2 },
                             })}
                           >
                             <p className="small-txt">
@@ -243,12 +243,13 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
                         variants: fadeUp,
                         initial: "hidden",
                         whileInView: "visible",
-            viewport: { once: true, amount: 0.2 },
+                        viewport: { once: true, amount: 0.2 },
                       })}
                     >
                       <Link
                         to="/about"
                         className="common-button about-button mt-0"
+                        target="_blank"
                       >
                         Our Story <img src={buttoArr} alt="button arrow" />
                       </Link>

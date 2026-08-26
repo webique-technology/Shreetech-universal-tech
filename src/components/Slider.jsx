@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -19,28 +19,32 @@ const Slider = () => {
     {
       id: 1,
       image: sliderImg1,
-      smalltitle: "SHREETECH Universal Technologies LLP",
+      smalltitle: "Shreetech Universal Technologies LLP",
       // title: "<span>Building</span> Bright Dreams Into Reality",
       title: "<span>Single Machine</span> </br> Turn Key Solution",
       // subtitle: "Delivering landmark real estate projects that redefine modern living.",
       button: "Explore More",
+      link: "/about",
     },
     {
       id: 2,
       image: sliderImg2,
-      smalltitle: "SHREETECH Universal Technologies LLP",
+      smalltitle: "Shreetech Universal Technologies LLP",
       // title: "<span>Shaping</span> a Sustainable Future of Living",
       title: " <span>Project Enabler Not Just An </span> Equipment Provider",
       // subtitle: "Innovative solutions that create value for investors and communities alike.",
       button: "Explore More",
+      link: "/product",
     },
     {
       id: 3,
       image: sliderImg3,
-      smalltitle: "SHREETECH Universal Technologies LLP",
+      smalltitle: "Shreetech Universal Technologies LLP",
       title: "<span>ENGINEERING THE FUTURE OF</span> FOOD & DAIRY.",
-      subtitle: "Crafting sustainable developments with quality, trust, and vision.",
+      subtitle:
+        "Crafting sustainable developments with quality, trust, and vision.",
       button: "Explore More",
+      link: "/video-gallery",
     },
   ];
 
@@ -95,17 +99,11 @@ const Slider = () => {
                   </motion.p> */}
 
                   {/* Button */}
-                  <motion.button
-                    className="common-button"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                    viewport={{ once: false }}
-                    onClick={() => navigate("/companies")}
-                  >
+
+                  <Link to={s.link} className="common-button" target="_blank">
                     {s.button}
                     <img src={buttoArr} />
-                  </motion.button>
+                  </Link>
                 </Container>
               </div>
             </div>

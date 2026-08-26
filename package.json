@@ -18,7 +18,6 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
-    "react-intersection-observer": "^10.0.0",
     "react-router-dom": "^7.9.6",
     "swiper": "^12.0.3",
     "typed.js": "^2.1.0",

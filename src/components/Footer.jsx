@@ -292,7 +292,7 @@ const Footer = () => {
                 >
                   <p className="text-center text-md-start mb-0">
                     &copy; Copyright {new Date().getFullYear()}{" "}
-                    <span>SHREETECH</span> Rights Reserved.
+                    <span>Shreetech Universal Technologies LLP</span> Rights Reserved.
                   </p>
                 </Col>
               </Row>
