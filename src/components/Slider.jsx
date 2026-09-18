@@ -7,9 +7,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import buttoArr from "../assets/images/button-circle.svg";
-import sliderImg1 from "../assets/images/slider-img-1.jpg";
-import sliderImg2 from "../assets/images/network-map.webp";
-import sliderImg3 from "../assets/images/slider-img-3.jpg";
+import sliderImg1 from "../assets/images/shree-slider-1.webp";
+import sliderImg2 from "../assets/images/shree-slider-2.webp";
+import sliderImg3 from "../assets/images/shree-slider-3.webp";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 

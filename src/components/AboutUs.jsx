@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
-import abt1 from "../assets/images/who-we-are.webp";
+import abt1 from "../assets/images/shreetech-about.webp";
 import abt3 from "../assets/images/aboutus-3.svg";
 import CountUp from "react-countup";
 import buttoArr from "../assets/images/button-circle.svg";
