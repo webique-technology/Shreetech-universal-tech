@@ -378,7 +378,7 @@ const Contact = () => {
       </div>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4510.635282808986!2d72.8388267!3d19.1297028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b628081ba7ef%3A0x97c600908243bf09!2sDLH%20Darpan!5e1!3m2!1sen!2sin!4v1787650775754!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3879.9242170420316!2d72.83247684832074!3d19.130878734800156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDA3JzU2LjYiTiA3MsKwNTAnMDQuOSJF!5e0!3m2!1sen!2sin!4v1789993475849!5m2!1sen!2sin"
         width="100%"
         height="350"
         style={{ border: 0, display: "block" }}
