@@ -19,7 +19,7 @@ import { ConactData } from "../data/contactData";
 const footerData = {
   about: {
     description:
-      "Empowering the food and dairy sectors with cutting-edge technology, sanitary design, and dedicated global engineering support.",
+      "Empowering End-To-End Machinery for Agro, Beverage & Convenience Foods. Sectors with cutting-edge technology, sanitary design, and dedicated global engineering support.",
     socialIcons: [
       { icon: FaFacebookF, url: "https://facebook.com" },
       { icon: FaTwitter, url: "https://twitter.com" },
@@ -165,7 +165,7 @@ const Footer = () => {
                   <div className="contact-item d-flex align-items-start gap-2">
                     <img src={fPhone} className="mt-1" alt="Phone" />
                     <div className="d-flex flex-column gap-1">
-                      {ConactData.number.registerd_office && (
+                      {/* {ConactData.number.registerd_office && (
                         <p className="mb-0">
                           <strong style={{ marginRight: "6px" }}>Tel:</strong>
                           <a
@@ -174,7 +174,7 @@ const Footer = () => {
                             +91 0{ConactData.number.registerd_office}
                           </a>
                         </p>
-                      )}
+                      )} */}
                       {ConactData.number.cell1 && (
                         <p className="mb-0">
                           <strong style={{ marginRight: "6px" }}>Mob:</strong>
@@ -237,14 +237,14 @@ const Footer = () => {
                   <div className="contact-item d-flex align-items-start gap-2">
                     <img src={fPhone} className="mt-1" alt="Phone" />
                     <div className="d-flex flex-column gap-1">
-                      {ConactData.number.admin_office && (
+                      {/* {ConactData.number.admin_office && (
                         <p className="mb-0">
                           <strong style={{ marginRight: "6px" }}>Tel:</strong>
                           <a href={`tel:+91${ConactData.number.admin_office}`}>
                             +91 0{ConactData.number.admin_office}
                           </a>
                         </p>
-                      )}
+                      )} */}
                       {ConactData.number.cell1 && (
                         <p className="mb-0">
                           <strong style={{ marginRight: "6px" }}>Mob:</strong>

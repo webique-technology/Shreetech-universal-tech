@@ -40,14 +40,14 @@ const Slider = () => {
       id: 3,
       image: sliderImg3,
       smalltitle: "Shreetech Universal Technologies LLP",
-      title: "<span>ENGINEERING THE FUTURE OF</span> FOOD & DAIRY.",
+      title: "<span>ENGINEERING THE FUTURE OF</span> FOOD INDUSTRY.",
       subtitle:
         "Crafting sustainable developments with quality, trust, and vision.",
       button: "Explore More",
       link: "/video-gallery",
     },
   ];
-
+		
   return (
     <div className="hero-slider">
       <Swiper

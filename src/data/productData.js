@@ -1,9 +1,9 @@
-import image1 from "../assets/images/fruits-vegetable.webp";
-import image2 from "../assets/images/beverages.webp";
-import image3 from "../assets/images/ready-to-eat.webp";
-import image4 from "../assets/images/confectionery.webp";
-import image5 from "../assets/images/snacks.webp";
-import image6 from "../assets/images/packaging-solutions.webp";
+import image1 from "../assets/images/products/fruits-vegetables.webp";
+import image2 from "../assets/images/products/beverages.webp";
+import image3 from "../assets/images/products/ready-to-eat.webp";
+import image4 from "../assets/images/products/confectionary-old.webp"; // Changed 'e' to 'a'
+import image5 from "../assets/images/products/snacks.webp";
+import image6 from "../assets/images/products/packaging.webp";
 
 export const ProductData = [
   {

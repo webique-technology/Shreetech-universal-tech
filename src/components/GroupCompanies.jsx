@@ -13,7 +13,7 @@ const accordionData = [
     id: 1,
     title: "Process Consultancy",
     content:
-      "Comprehensive audits, flow optimization, and hygienic design strategies tailored for dairy and liquid food processing plants.",
+      "Comprehensive audits, flow optimization, and hygienic design strategies tailored for beverages, fruits, vegetables and convenience foods processing plants.",
     image: image1,
     path: "/services",
   },

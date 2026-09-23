@@ -36,13 +36,13 @@ const AboutUs = ({ showStoryButton = true, showCards = true }) => {
 
   const aboutData = {
     smallText: "Who we are",
-    titleAbout: "Your Trusted Partner for Advanced Food & Dairy Engineering",
+    titleAbout: "Your Trusted Partner for Advanced End-To-End Machinery for Agro, Beverage & Convenience Foods",
     paragraph:
-      "SHREETECH UNIVERSAL TECHNOLOGIES is a reliable partner to a wide range of sectors in Food & Dairy industry by offering quality & technologically advanced end to end solutions. We have our business associates based in India, Germany, Italy, UK, Taiwan, Thailand & China. We have a strong technical team to provide sales as well as after sales service support.",
+      "SHREETECH UNIVERSAL TECHNOLOGIES is a reliable partner offering End-To-End Machinery for Agro, Beverage & Convenience Foods. We have our business associates based in India, Germany, Italy, UK, Taiwan, Thailand & China. We have a strong technical team to provide sales as well as after sales service support.",
     firstCard: {
       small: "Happy Clients",
       smallImg: HiOutlineBuildingOffice2,
-      number: 121,
+      number: 45,
       title: "Happy Clients",
     },
     secondCard: {

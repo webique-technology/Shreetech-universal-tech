@@ -50,7 +50,7 @@ const ProductProfile = () => {
                       <motion.img
                         src={item.image}
                         alt={item.title}
-                        className="img-fluid rounded-3 border w-100"
+                        className="img-fluid rounded-3 border w-100 h-100 object-fit-cover"
                         variants={isMobile ? {} : fadeUp}
                         initial={isMobile ? "visible" : "hidden"}
                         whileInView="visible"

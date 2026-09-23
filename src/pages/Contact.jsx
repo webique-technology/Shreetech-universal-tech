@@ -337,7 +337,7 @@ const Contact = () => {
                       )}
 
                       {card.type === "phone" &&
-                        card.numbers.map((phone, idx) => (
+                        card.numbers.slice(2).map((phone, idx) => (
                           <p
                             key={idx}
                             style={{
@@ -357,7 +357,7 @@ const Contact = () => {
                         ))}
 
                       {card.type === "email" &&
-                        card.emails.map((email, idx) => (
+                        card.emails.slice(1).map((email, idx) => (
                           <p
                             key={idx}
                             style={{

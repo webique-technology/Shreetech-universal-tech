@@ -1,3 +1,4 @@
+import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,13 +27,13 @@ const ProductsSec = () => {
 
         <Swiper
           modules={[Pagination, Autoplay]}
-          loop={true}
+          loop={ProductData.length > 4}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
-          watchSlidesProgress={true}
-          speed={500}
+          speed={600}
           spaceBetween={25}
           slidesPerView={4}
           breakpoints={{
@@ -44,13 +45,16 @@ const ProductsSec = () => {
         >
           {ProductData.map((item) => (
             <SwiperSlide key={item.id}>
-              <Link to="/product" className="text-decoration-none shadow-sm">
+              <Link
+                to="/product"
+                className="text-decoration-none shadow-sm d-block"
+              >
                 <div className="image-wrap product-sec-card">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="rounded-3"
-                    loading="lazy"
+                    decoding="async" // Offloads image decoding from the main UI thread
                   />
                   <div className="ppc-content">
                     <h4 className="text-dark fw-semibold">{item.title}</h4>

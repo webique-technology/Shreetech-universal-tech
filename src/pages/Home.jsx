@@ -14,7 +14,7 @@ const Home = () => {
       <MarqueeMoving />
       <GroupCompanies />
       <ProductsSec />
-      <Community />
+      {/* <Community /> */}
     </div>
   );
 };

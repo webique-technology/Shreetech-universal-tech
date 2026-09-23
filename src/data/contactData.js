@@ -6,8 +6,8 @@ export const ConactData = {
     "714, 7th Floor, Crystal Paradise Near Janki Center, Dattaji Salvi Marg Off. veera Desai Road, Andheri (W) Mumbai 400053 India",
   admin_office_link: "",
   emails: {
-    gmail: "shreetechllp@gmail.com",
-    gmail2: "shreetechllp@yahoo.com",
+    gmail: "pramod@shreetechuniversal.com",
+    gmail2: "pramod@shreetechuniversal.com",
   },
   number: {
     registerd_office: "2226791368",

@@ -59,18 +59,18 @@
     border-bottom: 1px solid #ddd;
     padding: 0;
     z-index: 999;
-    animation: fadeDown 0.3s ease forwards;
+    // animation: fadeDown 0.3s ease forwards;
   }
 }
 
-@keyframes fadeDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
+// @keyframes fadeDown {
+//   from {
+//     transform: translateY(-20px);
+//     opacity: 0;
+//   }
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+//   to {
+//     transform: translateY(0);
+//     opacity: 1;
+//   }
+// }
